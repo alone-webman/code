@@ -1,4 +1,8 @@
 <?php
 
 namespace AloneWebMan\Code;
-class ProcessFacade {}
+class ProcessFacade {
+    public static function config(): array {
+        return [];
+    }
+}

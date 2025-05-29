@@ -1,2 +1,2 @@
 <?php
-return [];
+return \AloneWebMan\Code\ProcessFacade::config();

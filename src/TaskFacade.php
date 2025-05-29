@@ -1,4 +1,6 @@
 <?php
 
 namespace AloneWebMan\Code;
-class TaskFacade {}
+class TaskFacade {
+    public function __construct() {}
+}

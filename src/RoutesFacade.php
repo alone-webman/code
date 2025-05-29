@@ -28,21 +28,22 @@ class RoutesFacade {
     }
 
     /**
-     * @param bool|null $status
+     * @param bool|null     $status
+     * @param callable|null $callback
      * @return void
      */
-    public static function back(bool|null $status): void {
-        $callback = function() {
+    public static function back(bool|null $status, callable|null $callback = null): void {
+        $callback = ($callback ?: (function() {
             $request = request();
             if ($request->method() == 'OPTIONS') {
                 return response('');
             }
             return $request->expectsJson() ? json(['code' => 404, 'msg' => '404 not found']) : alone_error_html();
-        };
+        }));
         if ($status === true) {
-            $status && Route::fallback($callback);
-        } elseif ($status === false) {
             Route::any('[{path:.+}]', $callback);
+        } elseif ($status === false) {
+            $status && Route::fallback($callback);
         }
     }
 }
