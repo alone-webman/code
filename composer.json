@@ -3,7 +3,7 @@
   "type":"library",
   "license":"MIT",
   "version":"1.0.0",
-  "description":"acme证书转换成各种环境",
+  "description":"webman 辅助代码",
   "autoload":{
     "psr-4":{
       "AloneWebMan\\Code\\":"src"
