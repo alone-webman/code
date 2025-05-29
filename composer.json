@@ -1,0 +1,23 @@
+{
+  "name":"alone-webman/code",
+  "type":"library",
+  "license":"MIT",
+  "version":"1.0.0",
+  "description":"acme证书转换成各种环境",
+  "autoload":{
+    "psr-4":{
+      "AloneWebMan\\Code\\":"src"
+    },
+    "files":[
+      "function.php"
+    ]
+  },
+  "require":{
+    "php":">=8.0"
+  },
+  "require-dev":{
+    "workerman/webman-framework":"^2.1",
+    "webman/database":"^2.1",
+    "webman/console":"^2.1"
+  }
+}
